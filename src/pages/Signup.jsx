@@ -16,41 +16,44 @@ export const SignUp = () => {
   };
 
   return (
-    <div className="bg-purple-100 h-screen flex flex-col items-center">
-      <h1 className="text-8xl mb-6 mt-2 text-purple-600">Sign Up!</h1>
-      <div className="h-3/5 w-2/5 rounded-2xl bg-purple-500 backdrop-opacity-75">
-        <div className="flex justify-center items-center mt-14">
-          <GiGriffinSymbol size={450} color="#7F1D1D" />
-        </div>
+    <div className="bg-gray-100 h-screen flex flex-col items-center justify-center">
+      <h1 className="text-8xl mb-6 text-gray-800">Sign Up!</h1>
+      <div className="w-96 p-6 rounded-2xl bg-white shadow-md">
+        <form className="flex flex-col" onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label className="block text-gray-700 font-medium mb-1">
+              Email
+            </label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700 font-medium mb-1">
+              Password
+            </label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-blue-500 text-white p-2 rounded-md hover:to-blue-600 transition:300">
+            Sign Up
+          </button>
+        </form>
       </div>
-      <form className="flex flex-col" onSubmit={handleSubmit}>
-        <label className="bg-purple-500 text-purple-50 p-1 mt-2 text-center rounded-md">
-          Email
-        </label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="mb-4 p-2 rounded-md border-1"
-          required
-        />
-        <label className="bg-purple-500 text-purple-50 p-1 text-center rounded-md">
-          Password
-        </label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="mb-4 p-2 rounded-md border-1"
-          required
-        />
-        <button
-          type="submit"
-          className="bg-purple-600 text-purple-50 p-2 rounded-md mt-4">
-          Sign Up
-        </button>
-      </form>
-      <Link to="/login" className="mt-4 text-purple-600">
+      <Link to="/" className="mt-4 text-blue-600 hover:underline">
         Already have an account? Log in here!
       </Link>
     </div>
