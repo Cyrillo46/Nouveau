@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Navbar } from "./Navbar";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -16,6 +17,7 @@ export const Login = () => {
 
   return (
     <div className="bg-gray-100 h-screen flex flex-col items-center justify-center">
+      <Navbar />
       <h1 className="text-8xl mb-6 text-slate-900">Welcome!</h1>
       <div className="w-96 p-6 bg-white rounded-2xl shadow-md">
         <h2 className="text-2xl font-light mb-4 text-slate-500 text-center">

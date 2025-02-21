@@ -7,7 +7,7 @@ export const Dashboard = () => {
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <div className="w-1/5 bg-slate-900 text-white p-5 hidden md:block">
+      <div className="w-1/5 bg-slate-800 text-white p-5 hidden md:block">
         <h2 className="text-2xl font-bold mb-6">Nouveau</h2>
         <h3 className="text-lg font-semibold mb-2">User name</h3>
         <ul className="space-y-4">
@@ -37,7 +37,9 @@ export const Dashboard = () => {
 
       {/* Main Content */}
       <div className="flex-1 p-6">
-        <h1 className="text-3xl font-bold mb-4">Welcome to Your Dashboard</h1>
+        <h1 className="text-3xl text-slate-700 font-bold mb-4">
+          Welcome to Your Dashboard
+        </h1>
 
         {/* Dynamic content based on user role */}
         {userRole === "staff" && (
