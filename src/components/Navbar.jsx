@@ -7,11 +7,11 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-500 text-white p-4 fixed top-0 left-0 w-full shadow-md">
+    <nav className="bg-slate-900 text-white p-4 fixed top-0 left-0 w-full shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 text-2xl font-bold">
           <GiGriffinSymbol />
-          <span>Turnover App</span>
+          <span>Nouveau</span>
         </Link>
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
