@@ -71,7 +71,11 @@ export const Dashboard = () => {
         {/* Dark Mode Toggle */}
         <button
           onClick={() => setDarkMode(!darkMode)}
-          className="mt-6 flex items-center space-x-2 p-2 bg-gray-700 hover:bg-gray-600 rounded text-white w-full">
+          className={`mt-6 flex items-center space-x-2 p-2 ${
+            darkMode
+              ? "bg-gray-700 text-white hover:bg-gray-500"
+              : "bg-slate-800 text-white hover:bg-slate-600"
+          } rounded text-white w-full`}>
           {darkMode ? <FaSun /> : <FaMoon />}
           <span>{darkMode ? "Light Mode" : "Dark Mode"}</span>
         </button>
