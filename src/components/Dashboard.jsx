@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   FaBars,
@@ -12,9 +12,33 @@ import {
 import { Sidebar } from "./Sidebar";
 
 export const Dashboard = () => {
+  // the role of the user
   const [userRole, setUserRole] = useState("staff");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [queue, setQueue] = useState([]);
+  const [newPatient, setNewPatient] = useState("");
+
+  useEffect(() => {
+    const savedQueue = JSON.parse(localStorage.getItem("patientQueue"));
+    if (savedQueue) {
+      setQueue(savedQueue);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("patientQueue", JSON.stringify(queue));
+  }, [queue]);
+
+  const addPatient = () => {
+    if (newPatient.trim() === "") return;
+    setQueue([...queue, { id: Date.now(), name: newPatient }]);
+    setNewPatient("");
+  };
+
+  const removePatient = (id) => {
+    setQueue(queue.filter((patient) => patient.id !== id));
+  };
 
   return (
     <div
