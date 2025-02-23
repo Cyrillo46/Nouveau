@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { GiGriffinSymbol } from "react-icons/gi";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
